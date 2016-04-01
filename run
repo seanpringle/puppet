@@ -1,4 +1,5 @@
 #!/bin/bash
+# https://docs.puppetlabs.com/guides/puppetlabs_package_repositories.html
 
 path=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 
