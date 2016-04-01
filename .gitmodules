@@ -1,0 +1,15 @@
+[submodule "postgresql"]
+	path = postgresql
+	url = https://github.com/puppetlabs/puppetlabs-postgresql.git
+[submodule "vcsrepo"]
+	path = vcsrepo
+	url = https://github.com/puppetlabs/puppetlabs-vcsrepo.git
+[submodule "firewall"]
+	path = firewall
+	url = https://github.com/puppetlabs/puppetlabs-firewall.git
+[submodule "stdlib"]
+	path = stdlib
+	url = https://github.com/puppetlabs/puppetlabs-stdlib.git
+[submodule "concat"]
+	path = concat
+	url = https://github.com/puppetlabs/puppetlabs-concat.git
