@@ -17,7 +17,7 @@ class base::firewall(
 
   firewall { '100 allow ssh':
     chain  => 'INPUT',
-    proto  => 'all',
+    proto  => 'tcp',
     dport  => '22',
     action => 'accept',
   }
