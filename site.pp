@@ -14,6 +14,8 @@ node /./
     'build-essential',
     'lua5.2',
     'liblua5.2-dev',
+    'sqlite3',
+    'libsqlite3-dev',
     'rtorrent',
   ]
 
