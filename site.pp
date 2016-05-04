@@ -21,7 +21,9 @@ node /./
     ensure => present,
   }
 
-  vcsrepo { '/usr/local/srv/slua':
+  $path_slua = /usr/local/src/slua
+
+  vcsrepo { $path_slua:
     ensure   => latest,
     provider => git,
     source   => "https://github.com/seanpringle/slua.git",
