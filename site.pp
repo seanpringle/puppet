@@ -21,7 +21,7 @@ node /./
     ensure => present,
   }
 
-  $path_slua = /usr/local/src/slua
+  $path_slua = '/usr/local/src/slua'
 
   vcsrepo { $path_slua:
     ensure   => latest,
