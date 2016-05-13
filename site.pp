@@ -32,6 +32,13 @@ node /./
     revision => 'master',
   }
 
+  firewall { '100 allow apache':
+    chain  => 'INPUT',
+    proto  => 'tcp',
+    dport  => '80',
+    action => 'accept',
+  }
+
   class { 'apache':
     default_vhost => false,
   }
