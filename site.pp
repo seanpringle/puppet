@@ -52,6 +52,9 @@ node /./
   apache::vhost { 'wordipelago.net':
     port    => '80',
     docroot => '/var/www/wordipelago.net',
+    serveraliases => [
+      'www.wordipelago.net',
+    ],
   }
 
   class { 'base::postgresql':
