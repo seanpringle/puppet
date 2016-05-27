@@ -49,6 +49,11 @@ node /./
     docroot => '/var/www/oneblueshoe.net',
   }
 
+  apache::vhost { 'wordipelago.net':
+    port    => '80',
+    docroot => '/var/www/wordipelago.net',
+  }
+
   class { 'base::postgresql':
     config => {
       shared_buffers => '128MB',
