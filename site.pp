@@ -2,6 +2,7 @@
 node /./
 {
   require base
+  require config
 
   firewall { '100 allow bitorrent':
     chain  => 'INPUT',
