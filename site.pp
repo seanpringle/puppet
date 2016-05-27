@@ -47,4 +47,17 @@ node /./
     port    => '80',
     docroot => '/var/www/oneblueshoe.net',
   }
+
+  class { 'base::postgresql':
+    config => {
+      shared_buffers => '128MB',
+      effective_cache_size => '256MB',
+    },
+  }
+
+  postgresql::server::db { 'wordipelago':
+    user     => 'wordipelago',
+    password => postgresql_password("wordipelago", $::config::password::wordipelago),
+  }
+
 }
