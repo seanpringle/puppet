@@ -57,7 +57,7 @@ node /./
 
   postgresql::server::db { 'wordipelago':
     user     => 'wordipelago',
-    password => postgresql_password("wordipelago", $::config::password::wordipelago),
+    password => postgresql_password("wordipelago", $::config::password['wordipelago']),
   }
 
 }
