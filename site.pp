@@ -17,6 +17,7 @@ node /./
     'liblua5.2-dev',
     'sqlite3',
     'libsqlite3-dev',
+    'libssl-dev',
     'rtorrent',
   ]
 
