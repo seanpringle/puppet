@@ -18,6 +18,7 @@ node /./
     'sqlite3',
     'libsqlite3-dev',
     'libssl-dev',
+    'libpcre3-dev',
     'rtorrent',
   ]
 
