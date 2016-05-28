@@ -69,9 +69,19 @@ node /./
     },
   }
 
+  $password = $::config::password['wordipelago']
+
   postgresql::server::db { 'wordipelago':
     user     => 'wordipelago',
-    password => postgresql_password("wordipelago", $::config::password['wordipelago']),
+    password => postgresql_password("wordipelago", $password),
+  }
+
+  file { '/etc/wordipelago.pgsql':
+    ensure  => file,
+    owner   => root,
+    group   => root,
+    mode    => '0644',
+    content => template('config/wordipelago.pgsql.erb'),
   }
 
 }
