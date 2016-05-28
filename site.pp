@@ -20,6 +20,7 @@ node /./
     'libssl-dev',
     'libpcre3-dev',
     'rtorrent',
+    'lua-sql-postgres',
   ]
 
   package { $packages:
