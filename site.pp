@@ -21,6 +21,7 @@ node /./
     'libpcre3-dev',
     'rtorrent',
     'lua-sql-postgres',
+    'lua-json',
   ]
 
   package { $packages:
