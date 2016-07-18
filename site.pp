@@ -74,6 +74,8 @@ node /./
 
   apache::vhost { '443 wordipelago.net':
     ssl      => true,
+    ssl_cert => '/etc/letsencrypt/live/www.wordipelago.net/fullchain.pem',
+    ssl_key  => '/etc/letsencrypt/live/www.wordipelago.net/privkey.pem',
     port     => '443',
     docroot  => '/var/www/wordipelago.net',
     servername => 'wordipelago.net',
