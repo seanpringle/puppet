@@ -64,6 +64,18 @@ node /./
     ]
   }
 
+  apache::vhost { 'wordipelago.net':
+    ssl      => true,
+    port     => '443',
+    docroot  => '/var/www/wordipelago.net',
+    serveraliases => [
+      'www.wordipelago.net',
+    ],
+    proxy_pass => [
+      { 'path' => '/api', 'url' => 'http://127.0.0.1:8080' },
+    ]
+  }
+
   class { 'base::postgresql':
     config => {
       shared_buffers => '128MB',
