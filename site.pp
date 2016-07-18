@@ -44,6 +44,13 @@ node /./
     action => 'accept',
   }
 
+  firewall { '100 allow apache ssl':
+    chain  => 'INPUT',
+    proto  => 'tcp',
+    dport  => '443',
+    action => 'accept',
+  }
+
   class { 'apache':
     default_vhost => false,
   }
@@ -64,7 +71,7 @@ node /./
     ]
   }
 
-  apache::vhost { 'wordipelago.net':
+  apache::vhost { 'ssl wordipelago.net':
     ssl      => true,
     port     => '443',
     docroot  => '/var/www/wordipelago.net',
