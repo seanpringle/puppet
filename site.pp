@@ -60,9 +60,10 @@ node /./
     docroot => '/var/www/oneblueshoe.net',
   }
 
-  apache::vhost { 'wordipelago.net':
+  apache::vhost { '80 wordipelago.net':
     port    => '80',
     docroot => '/var/www/wordipelago.net',
+    servername => 'wordipelago.net',
     serveraliases => [
       'www.wordipelago.net',
     ],
@@ -71,10 +72,11 @@ node /./
     ]
   }
 
-  apache::vhost { 'ssl wordipelago.net':
+  apache::vhost { '443 wordipelago.net':
     ssl      => true,
     port     => '443',
     docroot  => '/var/www/wordipelago.net',
+    servername => 'wordipelago.net',
     serveraliases => [
       'www.wordipelago.net',
     ],
