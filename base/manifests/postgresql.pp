@@ -3,6 +3,7 @@ class base::postgresql(
   $version = '9.5',
   $config  = { },
   $sources = [ ],
+  $auth = 'ident',
 ){
 
   class { 'postgresql::globals':
@@ -11,11 +12,15 @@ class base::postgresql(
   }->
   class { 'postgresql::server':
     listen_addresses => '*',
+    pg_hba_conf_defaults => false,
   }
 
-#  package { 'postgresql95-devel.x86_64':
-#    ensure => installed,
-#  }
+  postgresql::server::pg_hba_rule { "postgres ${auth}":
+    type        => 'local',
+    user        => 'postgres',
+    database    => 'postgres',
+    auth_method => $auth,
+  }
 
   $config.each |String $key, String $val|
   {
