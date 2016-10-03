@@ -12,4 +12,11 @@ node /./
       maintenance_work_mem => '1GB',
     }
   }
+
+  firewall { '35000 dev':
+    chain  => 'INPUT',
+    proto  => 'tcp',
+    dport  => '35000',
+    action => 'accept',
+  }
 }
