@@ -5,6 +5,7 @@ node /./
 
   class { 'base::postgresql':
     version => '9.6',
+    auth => 'trust',
     config  => {
       shared_buffers => '4GB',
       effective_cache_size => '8GB',
