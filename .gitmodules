@@ -16,3 +16,6 @@
 [submodule "apt"]
 	path = apt
 	url = https://github.com/puppetlabs/puppetlabs-apt.git
+[submodule "apache"]
+	path = apache
+	url = https://github.com/puppetlabs/puppetlabs-apache.git
