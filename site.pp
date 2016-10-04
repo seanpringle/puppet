@@ -14,10 +14,33 @@ node /./
     }
   }
 
-  firewall { '35000 dev':
+  firewall { '80':
     chain  => 'INPUT',
     proto  => 'tcp',
-    dport  => '35000',
+    dport  => '80',
     action => 'accept',
+    source => '150.203.248.222/32',
+  }
+
+  selboolean { 'httpd_can_network_connect':
+    persistent => true,
+    value      => on,
+  }
+
+  class { 'apache':
+    default_vhost => false,
+  }
+
+  include apache::mod::proxy
+
+  apache::listen { '80': }
+
+  apache::vhost { 'localhost':
+    ip => '*',
+    ip_based => true,
+    docroot => '/var/www/html',
+    proxy_pass => [
+      { 'path' => '/', 'url' => 'http://127.0.0.1:8080/', },
+    ],
   }
 }
